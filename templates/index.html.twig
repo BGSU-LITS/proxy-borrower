@@ -1,0 +1,274 @@
+{% set title = 'Research Proxy Borrower Form' %}
+{% set footer = {'contact': 'http://www.bgsu.edu/library/services/ask-us.html'} %}
+{% extends [settings.template.page, 'page.html.twig'] %}
+
+{% block content %}
+{{ parent() }}
+    <div class="row">
+        <div class="col-xs-2 col-sm-1">
+            To:
+        </div>
+        <div class="col-xs-10 col-sm-11">
+            BGSU Faculty/Staff Members
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-sm-1">
+            From:
+        </div>
+        <div class="col-xs-10 col-sm-11">
+            Access Services Department, Jerome Library
+        </div>
+    </div>
+    <p>To facilitate your needs and allow research assistant(s) to borrow and/or place holds on materials in your name, we need the following:</p>
+    <ul>
+        <li>Please fill in the form below, it will be sent to the Access Services email for processing within 1 business day;</li>
+        <li><u>Permission time granted should not exceed one year;</u></li>
+        <li>Inform the research assistant that the staff at the Circulation Desk will ask them to present their photo ID at the time they are checking out materials in your name;</li>
+        <li>If at any time you have questions regarding these procedures or you would like to have an updated list of materials checked out in your name, please call 419-372-2051 or email <a href="mailto:circdesk@bgsu.edu">circdesk@bgsu.edu</a>.</li>
+    </ul>
+    <p>IT WILL BE YOUR RESPONSIBILITY to communicate to a research assistant any guidelines and/or limitations within which they may operate.</p>
+    <p>Thank you for your cooperation and continued support of BGSU University Libraries.</p>
+    <form method="post" novalidate>
+        <div class="row">
+            <div class="col-sm-1">
+                To:
+            </div>
+            <div class="col-sm-5">
+                <p>
+                    Access Services Department<br>
+                    Jerome Library
+                </p>
+            </div>
+            <div class="col-sm-5">
+                <p>
+                    Date:
+                    {{ 'now'|date('F j, Y') }}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+                From:
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label for="faculty_name">Faculty/Staff Member’s&nbsp;Name</label>
+                    {{
+                        helper.input({
+                            type: 'text',
+                            name: 'faculty_name',
+                            value: faculty_name,
+                            attribs: {
+                                class: 'form-control',
+                                id: 'faculty_name',
+                                required: true
+                            }
+                        })
+                        |raw
+                    }}
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label for="faculty_id">Faculty/Staff Member’s ID Number</label>
+                    {{
+                        helper.input({
+                            type: 'text',
+                            name: 'faculty_id',
+                            value: faculty_id,
+                            attribs: {
+                                class: 'form-control',
+                                id: 'faculty_id',
+                                required: true,
+                                pattern: '^[0-9]{10}$',
+                                title: 'Enter exactly 10 digits.'
+                            }
+                        })
+                        |raw
+                    }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            {{
+                                helper.input({
+                                    type: 'checkbox',
+                                    name: 'signature',
+                                    value: signature,
+                                    attribs: {
+                                        id: 'signature',
+                                        value: 1,
+                                        required: true
+                                    }
+                                })
+                                |raw
+                            }}
+                            I understand that checking this box constitutes an electronic signature confirming that I acknowledge and agree to the above terms.
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+                <div class="form-group">
+                    <label for="faculty_email">Faculty/Staff Member’s&nbsp;Email</label>
+                    {{
+                        helper.input({
+                            type: 'email',
+                            name: 'faculty_email',
+                            value: faculty_email,
+                            attribs: {
+                                class: 'form-control',
+                                id: 'faculty_email',
+                                required: true
+                            }
+                        })
+                        |raw
+                    }}
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    {{
+                        helper.input({
+                            type: 'text',
+                            name: 'department',
+                            value: department,
+                            attribs: {
+                                class: 'form-control',
+                                id: 'department',
+                                required: true
+                            }
+                        })
+                        |raw
+                    }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+                <div class="form-group">
+                    <label for="designee_name">Designee’s Name</label>
+                    {{
+                        helper.input({
+                            type: 'text',
+                            name: 'designee_name',
+                            value: designee_name,
+                            attribs: {
+                                class: 'form-control',
+                                id: 'designee_name',
+                                required: true
+                            }
+                        })
+                        |raw
+                    }}
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="form-group">
+                    <label for="designee_id">Designee’s ID Number</label>
+                    {{
+                        helper.input({
+                            type: 'text',
+                            name: 'designee_id',
+                            value: designee_id,
+                            attribs: {
+                                class: 'form-control',
+                                id: 'designee_id',
+                                required: true,
+                                pattern: '^[0-9]{10}$',
+                                title: 'Enter exactly 10 digits.'
+                            }
+                        })
+                        |raw
+                    }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+                <div class="form-group">
+                    <label for="designee_email">Designee’s Email</label>
+                    {{
+                        helper.input({
+                            type: 'email',
+                            name: 'designee_email',
+                            value: designee_email,
+                            attribs: {
+                                class: 'form-control',
+                                id: 'designee_email',
+                                required: true
+                            }
+                        })
+                        |raw
+                    }}
+                </div>
+            </div>
+        </div>
+        <div class="row form-inline">
+            <div class="col-sm-11">
+                has my permission to check out materials and place holds on materials in my name. This permission is to
+                <span class="text-nowrap">
+                    <label for="expire"><strong>expire</strong></label>
+                    {{
+                        helper.input({
+                            type: 'date',
+                            name: 'expire',
+                            value: expire,
+                            attribs: {
+                                class: 'form-control',
+                                id: 'expire',
+                                required: true,
+                                min: 'now'|date('Y-m-d'),
+                                max: '+1 year'|date('Y-m-d')
+                            }
+                        })
+                        |raw
+                    }}.
+                </span>
+                <span class="text-nowrap">
+                    (Time granted should not exceed one year).
+                </span>
+            </div>
+        </div>
+        <p><strong>I understand that by granting permission, I am assuming responsibility for all materials checked out in my name.</strong></p>
+        {{
+            helper.input({
+                type: 'submit',
+                name: false,
+                value: 'Email Your Request',
+                attribs: {class: 'btn btn-primary'}
+            })
+            |raw
+        }}
+        {{ csrf_hidden|raw }}
+    </form>
+{% endblock %}
+
+{% block styles %}
+{{ parent() }}
+<style>
+form { margin-top: 3em }
+label { font-weight: normal; margin: 0 }
+.checkbox { margin: 0 }
+.form-inline .form-control { display: inline-block; width: auto; vertical-align: middle }
+.row + p { margin-top: 10px }
+</style>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <ul class="list-inline">
+            <li><a href="http://www.bgsu.edu/">BGSU Homepage</a></li>
+            <li><a href="http://www.bgsu.edu/library/">University Libraries Homepage</a></li>
+            <li><a href="http://www.bgsu.edu/library/services/ask-us.html">Contact Us at the University Libraries</a></li>
+        </ul>
+    </footer>
+{% endblock %}

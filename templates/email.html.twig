@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <body>
+        <h1 style="margin:0 0 10px 0">Research Proxy Borrower Form</h1>
+        <p><strong>If you did not agree to this proxy please contact the Circulation Desk immediately</strong></p>
+        <table border="0" cellspacing="0" cellpadding="0" style="margin:0 0 10px 0">
+            <tr>
+                <td valign="top">To:&nbsp;&nbsp;&nbsp;</td>
+                <td valign="top">BGSU Faculty/Staff Members</td>
+            </tr>
+            <tr>
+                <td valign="top">From:&nbsp;&nbsp;&nbsp;</td>
+                <td valign="top">Access Services Department, Jerome Library</td>
+            </tr>
+        </table>
+        <p style="margin:0 0 10px 0">To facilitate your needs and allow research assistant(s) to borrow and/or place holds on materials in your name, we need the following:</p>
+        <ul style="margin-top:0;margin-bottom:10px">
+            <li>Please fill in the form below, it will be sent to the Access Services email for processing within 1 business day;</li>
+            <li><u>Permission time granted should not exceed one year;</u></li>
+            <li>Inform the research assistant that the staff at the Circulation Desk will ask them to present their photo ID at the time they are checking out materials in your name;</li>
+            <li>If at any time you have questions regarding these procedures or you would like to have an updated list of materials checked out in your name, please call 419-372-2051 or email <a href="mailto:circdesk@bgsu.edu">circdesk@bgsu.edu</a>.</li>
+        </ul>
+        <p style="margin:0 0 10px 0">IT WILL BE YOUR RESPONSIBILITY to communicate to a research assistant any guidelines and/or limitations within which they may operate.</p>
+        <p style="margin:0 0 20px 0">Thank you for your cooperation and continued support of BGSU University Libraries.</p>
+        <table border="0" cellspacing="0" cellpadding="0" width="100%" style="margin:0">
+            <tr>
+                <td valign="top">To:&nbsp;&nbsp;&nbsp;</td>
+                <td valign="top" width="49%"><div style="margin:0 0 10px 0">Access Services Department<br>Jerome Library</div></td>
+                <td valign="top" rowspan="5">&nbsp;&nbsp;&nbsp;</td>
+                <td valign="top" width="49%"><div style="margin:0 0 10px 0">Date: {{ 'now'|date('F j, Y') }}</div></td>
+            </tr>
+            <tr>
+                <td valign="top" rowspan="4">From:&nbsp;&nbsp;&nbsp;</td>
+                <td valign="top"><div style="border-bottom:1px solid black;margin:0 0 4px 0;padding:0 0 4px 0">{{ faculty_name }}</div><div style="margin:0 0 20px 0">Faculty/Staff Member’s Name</div></td>
+                <td valign="top"><div style="border-bottom:1px solid black;margin:0 0 4px 0;padding:0 0 4px 0">{{ faculty_id }}</div><div style="margin:0 0 20px 0">Faculty/Staff Member’s ID Number</div></td>
+            </tr>
+            <tr>
+                <td valign="top"><div style="border-bottom:1px solid black;margin:0 0 4px 0;padding:0 0 4px 0">{{ faculty_email }}</div><div style="margin:0 0 20px 0">Faculty/Staff Member’s Email</div></td>
+                <td valign="top"><div style="border-bottom:1px solid black;margin:0 0 4px 0;padding:0 0 4px 0">{{ department }}</div><div style="margin:0 0 20px 0">Department</div></td>
+            </tr>
+            <tr>
+                <td valign="top"><div style="border-bottom:1px solid black;margin:0 0 4px 0;padding:0 0 4px 0">{{ designee_name }}</div><div style="margin:0 0 20px 0">Designee’s Name</div></td>
+                <td valign="top"><div style="border-bottom:1px solid black;margin:0 0 4px 0;padding:0 0 4px 0">{{ designee_id }}</div><div style="margin:0 0 20px 0">Designee’s ID Number</div></td>
+            </tr>
+            <tr>
+                <td valign="top"><div style="border-bottom:1px solid black;margin:0 0 4px 0;padding:0 0 4px 0">{{ designee_email }}</div><div style="margin:0 0 20px 0">Designee’s Email</div></td>
+                <td valign="top">&nbsp;</td>
+            </tr>
+        </table>
+        <p style="margin:0 0 10px 0">has my permission to check out materials and place holds on materials in my name. This permission is to <b>expire</b> {{ expire|date('F j, Y') }} (time granted should not exceed one year).</p>
+        <p style="margin:0 0 10px 0"><strong>I understand that by granting permission, I am assuming responsibility for all materials checked out in my name.</strong></p>
+    </body>
+</html>
